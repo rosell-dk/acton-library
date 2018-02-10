@@ -1,0 +1,18 @@
+/*
+The new act-on forms have a lot of space between fields, because error-messages takes up space
+even when they are not displayed.
+
+This solution puts the error messages on top of the inputs (to the right)
+*/
+
+.ao-form .ao-input-block {
+   position: relative;
+}
+.ao-form .ao-block-wrapper input+span.ao-form-error-message {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+.ao-form input {
+    margin-bottom: 6px;
+}

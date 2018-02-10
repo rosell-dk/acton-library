@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+  // Mark all rows that has some content with attribute: "data-row-class"
+  // ie if some content says: <div data-row-class="contact-row">,
+  // then the containing row will get the "contact-row" as a class
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elements = document.querySelectorAll('[data-row-class]');
+
+    elements.forEach(function(elem) {
+
+      var rowClass = elem.getAttribute('data-row-class');
+
+      // climb up the tree, untill we find an element with "ao-row" class
+
+      var hasClass = false;
+      while (!hasClass && elem && elem !== document) {
+        elem = elem.parentNode;
+        hasClass = elem.className.split(/\s/).some(function(c){
+          return c == 'ao-row';
+        });
+      }
+      if (hasClass) {
+        elem.className += (' ' + rowClass);
+      }
+
+    });
+  });
+
+  </script>
+  <style>
+  .contact-row {
+    color: green;
+  }
+  .ao-row {
+    border: 1px solid green;
+  }
+  </style>
+</head>
+<body>
+  <div class="ao-row-wrapper">
+    <div class="ao-row">
+      <div class="ao-column">
+        <span data-row-class="contact-row">I'm green</span>
+      </div>
+    </div>
+    <div class="ao-row">
+      <div class="ao-column">
+        <span data-row-class="contact-row">I'm too</span>
+      </div>
+    </div>
+    <div class="ao-row">
+      <div class="ao-column">
+        <span>I'm not</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

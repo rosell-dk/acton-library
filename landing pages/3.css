@@ -1,0 +1,180 @@
+/*
+Følgende blev brugt på Microsof Dynamics365
+*/
+
+@font-face{
+    font-family:MWF-MDL2;
+    src:url(../fonts/MWFMDL2.woff) format("woff"),url(../fonts/MWFMDL2.ttf) format("truetype"),url(../fonts/MWFMDL2.svg) format("svg")
+}
+@font-face{
+    font-family:SegoeUI;
+    src:local("Segoe UI"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.svg#web) format("svg");
+    font-weight:400
+}
+@font-face{
+    font-family:SegoeUI;
+    src:local("Segoe UI Light"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.svg#web) format("svg");
+    font-weight:100
+}
+@font-face{
+    font-family:SegoeUI;
+    src:local("Segoe UI Semilight"),local("Segoe UI"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.svg#web) format("svg");
+    font-weight:200
+}
+@font-face{
+    font-family:SegoeUI;
+    src:local("Segoe UI Semibold"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.svg#web) format("svg");
+    font-weight:600
+}
+@font-face{
+    font-family:SegoeUI;
+    src:local("Segoe UI Bold"),local("Segoe UI"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype"),url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.svg#web) format("svg");
+    font-weight:700
+}
+
+* {
+    color: #505c6c;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h2 {
+
+ font-size: 34px;
+ font-weight: 100;
+ line-height: 40px;
+}
+
+/* Row background-colors etc */
+
+div > div:nth-child(even) > .ao-row-wrapper {
+    background-color: #d6d6d6 !important;
+}
+div > div:nth-child(odd) .ao-row-wrapper {
+    background-color: #b5b8b7 !important;
+}
+/* header (logo) */
+div > div:first-child .ao-row-wrapper {
+    background-color: #fff !important;
+}
+/* footer */
+div > div:last-child .ao-row-wrapper {
+    background-color: #fff !important;
+}
+div > div:nth-child(2) .ao-row-wrapper {
+    background-color: #02224f !important;
+    padding: 30px 0;
+}
+
+/* Make background colors of the rows go to the edge of the screen. We do it by setting max width on .ao-row instead of .ao-row-wrapper. */
+
+.ao-row-wrapper {
+    width: 100% !important;
+
+}
+.ao-row {
+    margin: 0 auto !important;
+    max-width: 1120px;
+}
+
+
+.imageField  img {
+    max-width: 90% !important;
+    width: 250px !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+/* Give text blocks minimum height and some padding */
+.ao-column .ao-richtext-block {
+  padding-top: 30px;
+  min-height: 220px;
+}
+/* But no minumum height for the first row (the logo) and the footer */
+div > div:first-child > .ao-row-wrapper .ao-column .ao-richtext-block,
+div > div:last-child > .ao-row-wrapper .ao-column .ao-richtext-block {
+  padding-top: 0px;
+  min-height: 0px;
+}
+
+@media (max-width:767px) {
+    .ao-column .ao-richtext-block {
+      padding-top: 20px;
+      min-height: 40px;
+    }
+}
+
+.ao-column .ao-richtext-block {
+}
+
+/* Percentage padding on all text blocks, iframe blocks and form blocks */
+.ao-column-12 .ao-customcontent-block,
+.ao-column-12 .ao-form-block,
+.ao-column-12 .ao-richtext-block {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+}
+.ao-column-6 .ao-customcontent-block,
+.ao-column-6 .ao-form-block,
+.ao-column-6 .ao-richtext-block {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+
+/* When act-on transforms to single-column design, paddings must be the same */
+@media (max-width:767px) {
+    .ao-column-12 .ao-customcontent-block,
+    .ao-column-12 .ao-form-block,
+    .ao-column-12 .ao-richtext-block,
+    .ao-column-6 .ao-customcontent-block,
+    .ao-column-6 .ao-form-block,
+    .ao-column-6 .ao-richtext-block{
+      padding-left: 7.5%;
+      padding-right: 7.5%;
+    }
+
+}
+
+/* No padding on specific columns  */
+/*
+ #column-c1513082655983 .ao-richtext-block {
+     padding: 0!important;
+ }*/
+
+
+/* video */
+ .ao-video-block {
+     padding: 0 5%;
+ }
+ .ao-video-block iframe {
+     border: 1px solid #323c5a;
+ }
+
+
+/* FORM
+   ---- *
+
+ /* add padding round the form */
+.ao-form-block {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+ .ao-form label,
+ .ao-form label span {
+     color: white !important;
+ }
+ .ao-form input {
+     margin-bottom: 6px;
+ }
+ .ao-form .ao-input-block {
+    position: relative;
+}
+.ao-form .ao-block-wrapper input+span.ao-form-error-message {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

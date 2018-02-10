@@ -1,0 +1,33 @@
+.circle-link {
+    padding: 5px;               /* circle size */
+    background-color: #8db2bf;  /* circle background color */
+    border: 1px solid white;    /* circle border color */
+    color: white;               /* icon color */
+}
+.circle-link svg {
+  width: 13px;                  /* icon width */
+  height: 13px;                 /* icon size */
+}
+
+/* hover states */
+.circle-link:hover {
+  background-color: white;
+  color: #2f7ea0;
+  border: 1px solid white;
+}
+
+/* The rest probably won't need tweaking */
+
+.circle-link {
+    box-sizing: content-box;
+    border-radius: 44px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 3px;
+}
+.circle-link svg {
+  fill: currentcolor;
+  stroke: currentcolor;
+  display: block;
+}

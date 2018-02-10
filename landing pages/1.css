@@ -1,0 +1,35 @@
+/*Meget af den CSS jeg har lavet til direction na 2017 - landing pagen kan sikkert godt blive nyttig på andre landing-pages.
+
+Så, her er den - til det kode-library vi ikke har, andet end i vores mails...
+*/
+
+/* Open sans font, from google */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+*, div, p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Add spacing around columns (only for two-column design) */
+.ao-column-6 > .ao-column-inner {
+    padding-left:4%!important;
+    padding-right:4%!important;
+}
+
+/* Remove spacing above first paragraph in a column */
+.ao-column-inner p:first-child {
+    margin-top:0;
+    padding-top:0;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  /* Add some margin between what used to be columns, but are now rows, in the one-column layout (only for two-column design) */
+  .ao-column-6:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  /* Hide borders set on columns */
+  .ao-column-inner {
+    border-width: 0!important;
+    padding:0!important;
+  }
+}

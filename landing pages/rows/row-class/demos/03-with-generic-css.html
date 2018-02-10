@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="../row-class.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    rowClass({
+      keep_ao_row_wrapper_class_and_styles: true
+    });
+    rowClass({
+      keep_ao_row_wrapper_class_and_styles: true,
+      selector: '.ao-row'
+    });
+  });
+  </script>
+  <link rel="stylesheet" href="../row-class-generic.css" type="text/css" media="all">
+
+</head>
+<body class="ao-lp">
+  <div class="responsive">
+    <p>
+      Here, we include <i>row-class-generic.css</i> instead of <i>row-class-standard-row</i><br>
+      That CSS is a basically the same, but with '.standard-row' replaced with '.responsive > div'.<br>
+      <b>So that means all rows will be standard rows.</b>
+    </p>
+    <p>
+      In order for the script to set "bb" classes on rows that does not contian any elements with
+      the data-row-class set, we make an extra call to rowClass with a custom selector.
+      This will handle all the ao-rows left after the first call.
+    </p>
+
+    <div>
+      <div class="ao-row-wrapper" style="margin:auto">
+        <div class="ao-row" style="border-radius: 0px;">
+          <div class="ao-column ao-column-6">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <span>This row has no class set!</span>
+              </div>
+            </div>
+          </div>
+          <div class="ao-column ao-column-6">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <span>...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ao-row-wrapper" style="margin:auto">
+        <div class="ao-row" style="border-radius: 0px;">
+          <div class="ao-column ao-column-4">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <p data-row-class="light boxed">Light row, boxed</p>
+              </div>
+            </div>
+          </div>
+          <div class="ao-column ao-column-4">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <p>more content...</p>
+              </div>
+            </div>
+          </div>
+          <div class="ao-column ao-column-4">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <p>more content...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ao-row-wrapper" style="margin:auto">
+        <div class="ao-row" style="border-radius: 0px;">
+          <div class="ao-column ao-column-3">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <p data-row-class="light boxed break-early no-top-padding">Light row, boxed, break-early, no-top-padding</p>
+              </div>
+            </div>
+          </div>
+          <div class="ao-column ao-column-3">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <p>more content...</p>
+              </div>
+            </div>
+          </div>
+          <div class="ao-column ao-column-3">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <p>more content...</p>
+              </div>
+            </div>
+          </div>
+          <div class="ao-column ao-column-3">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <p>more content...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ao-row-wrapper" style="margin:auto">
+        <div class="ao-row" style="border-radius: 0px;">
+          <div class="ao-column ao-column-6">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <span data-row-class="dark edge-to-edge">Edge-to-edge</span>
+              </div>
+            </div>
+          </div>
+          <div class="ao-column ao-column-6">
+            <div class="ao-column-inner">
+              <div class="ao-block">
+                <span>...</span>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

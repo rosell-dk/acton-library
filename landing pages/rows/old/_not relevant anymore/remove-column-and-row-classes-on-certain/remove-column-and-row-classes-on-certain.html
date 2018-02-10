@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+  // Set class on all row-wrappers that has some content with attribute: "data-set-row-wrapper-class-and-remove-ao-classes"
+  // AND clean all ao styles and classes on the row (but not inside the blocks)
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elements = document.querySelectorAll('[data-set-row-wrapper-class-and-remove-ao-classes]');
+
+    elements.forEach(function(elem) {
+
+      var newRowWrapperClass = elem.getAttribute('data-set-row-wrapper-class-and-remove-ao-classes');
+
+      // climb up the tree, untill we find an element with "ao-row-wrapper" class
+      var hasClass = false;
+      while (!hasClass && elem && elem !== document) {
+        elem = elem.parentNode;
+        hasClass = elem.className.split(/\s/).some(function(c){
+          return c == 'ao-row-wrapper';
+        });
+      }
+      if (hasClass) {
+        // We have found the containing row wrapper
+
+
+        // Clean up all ao-classes on row (ao-row, ao-column, ao-column-inner, etc)
+        // But we do not wish to clean up ao classes inside blocks (imageField, etc)
+
+        // Strategy:
+        // 1) Find all blocks (.ao-block)
+        // 2) Remove class and styles of parents of these blocks (until ao-row-wrapper)
+
+        var blocks = elem.querySelectorAll('.ao-block');
+        blocks.forEach(function(el) {
+
+          // climb up the tree, untill we find an element with "ao-row-wrapper" class
+          var hasClass = false;
+          while (!hasClass && el && el !== document) {
+            el.className = '';
+            el.style = '';
+            el = el.parentNode;
+            hasClass = el.className.split(/\s/).some(function(c){
+              return c == 'ao-row-wrapper';
+            });
+          }
+
+        })
+      }
+
+      elem.className = newRowWrapperClass;
+
+    });
+  });
+
+  </script>
+  <style>
+  .ao-row {
+    border: 5px solid green;
+  }
+  .ao-column {
+    background-color: blue;
+  }
+  </style>
+</head>
+<body>
+  <div class="ao-row-wrapper">
+    <div class="ao-row">
+      <div class="ao-column">
+        <span data-row-class="contact-row">I'm green</span>
+      </div>
+    </div>
+    <div class="ao-row">
+      <div class="ao-column">
+        <span data-row-class="contact-row">I'm too</span>
+      </div>
+    </div>
+    <div class="ao-row">
+      <div class="ao-column">
+        <span>I'm not</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ao-row-wrapper" style="margin: auto; border-width: 0px; border-style: solid; background-repeat: no-repeat; background-size: auto; background-position: center center; background-color: rgb(255, 255, 255); border-radius: 0px;">
+		<div class="ao-row" style="border-radius: 0px;border-width: 0px;padding: 0px;" id="row-">
+			<div class="ao-column ao-column-4 mobile-ao-column-4" style="padding: 0px;" id="column-null">
+				<div style="background-color: transparent; padding: 0px; border-radius: 0px; border-color: rgb(0, 0, 0); border-style: solid; border-width: 0px;" class="ao-column-inner">
+					<div style="padding-bottom: 0px">
+            <div class="ao-block  ao-icon-block" id="block-b1516108144842">
+            	<div class="imageField" style="text-align: center; ;">
+            		<img src="http://marketing.flsmidth.com/cdnr/91/acton/attachment/27469/f-01c2/2/-/-/-/-/image.png" style="max-width: 100%; vertical-align: top; display: inline-block; border-radius: 0px; " alt=" ">
+            	</div>
+            </div>
+		      </div>
+        </div>
+      </div>
+		</div>
+		<div class="ao-column ao-column-8 mobile-ao-column-8" style="padding: 0px;" id="column-null">
+			<div style="background-color: transparent; padding: 0px; border-radius: 0px; border-color: inherit; border-style: inherit; border-width: 0px;" class="ao-column-inner">
+				<div style="padding-bottom: 0px">
+          <div class="ao-block rich-text-wrap-text  ao-richtext-block" id="block-b1516108125612">
+            <div data-set-row-wrapper-class-and-remove-ao-classes="contact" style="background-color: #82adbd;">
+              <h2 style="color: white;">Austalia</h2>
+            </div>
+          </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

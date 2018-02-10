@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+  // Remove act-on row classes on rows that has some content with attribute: "data-remove-ao-row-class"
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elements = document.querySelectorAll('[data-remove-ao-row-class]');
+
+    elements.forEach(function(elem) {
+
+      // climb up the tree, untill we find an element with "ao-row" class
+      var hasClass = false;
+      while (!hasClass && elem && elem !== document) {
+        elem = elem.parentNode;
+        hasClass = elem.className.split(/\s/).some(function(c){
+          return c == 'ao-row';
+        });
+      }
+      if (hasClass) {
+        elem.className = '';
+      }
+    });
+  });
+
+
+  </script>
+  <style>
+  .contact-row {
+    color: green;
+  }
+  .ao-row {
+    border: 1px solid green;
+  }
+  </style>
+</head>
+<body>
+  <div class="ao-row-wrapper">
+    <div class="ao-row">
+      <div class="ao-column">
+        <span>I'm an ordinary ao-row</span>
+      </div>
+    </div>
+    <div class="ao-row">
+      <div class="ao-column">
+        <span data-remove-ao-row-class>I got my ao-row class removed!</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="row_class.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    rowClass( {
+      remove_ao_classes: true,
+      add_bb_classes: true,
+      remove_ao_styles: true,
+      keep_ao_row_wrapper_class: false,
+      keep_ao_row_wrapper_styles: true
+    });
+  });
+  </script>
+  <style>
+  .ao-row {
+    border: 5px solid green;
+  }
+  .ao-column {
+    background-color: green;
+  }
+  .bb-row {
+    border: 5px solid blue;
+    padding: 20px;
+  }
+  .dark-row {
+    background-color: brown;
+    color: white;
+  }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="ao-row-wrapper" style="margin:auto">
+      <div class="ao-row" style="border-radius: 0px;">
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span data-row-class="contact-row">I'm in a 'contact' row</span>
+          </div>
+        </div>
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span>I'm also in a contact-row (because my brother is)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="ao-row-wrapper" style="margin:auto">
+      <div class="ao-row" style="border-radius: 0px;">
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span>I'm not in a special row</span>
+          </div>
+        </div>
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span>Neither am I</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="ao-row-wrapper" style="margin:auto">
+      <div class="ao-row" style="border-radius: 0px;">
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span data-row-class="contact-row dark-row">I'm both a contact row and dark row</span>
+          </div>
+        </div>
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span>me too...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--
+  <div class="ao-row-wrapper" style="margin: auto; border-width: 0px; border-style: solid; background-repeat: no-repeat; background-size: auto; background-position: center center; background-color: rgb(255, 255, 255); border-radius: 0px;">
+		<div class="ao-row" style="border-radius: 0px;border-width: 0px;padding: 0px;" id="row-">
+			<div class="ao-column ao-column-4 mobile-ao-column-4" style="padding: 0px;" id="column-null">
+				<div style="background-color: transparent; padding: 0px; border-radius: 0px; border-color: rgb(0, 0, 0); border-style: solid; border-width: 0px;" class="ao-column-inner">
+					<div style="padding-bottom: 0px">
+            <div class="ao-block  ao-icon-block" id="block-b1516108144842">
+            	<div class="imageField" style="text-align: center; ;">
+            		<img src="http://marketing.flsmidth.com/cdnr/91/acton/attachment/27469/f-01c2/2/-/-/-/-/image.png" style="max-width: 100%; vertical-align: top; display: inline-block; border-radius: 0px; " alt=" ">
+            	</div>
+            </div>
+		      </div>
+        </div>
+      </div>
+		</div>
+		<div class="ao-column ao-column-8 mobile-ao-column-8" style="padding: 0px;" id="column-null">
+			<div style="background-color: transparent; padding: 0px; border-radius: 0px; border-color: inherit; border-style: inherit; border-width: 0px;" class="ao-column-inner">
+				<div style="padding-bottom: 0px">
+          <div class="ao-block rich-text-wrap-text  ao-richtext-block" id="block-b1516108125612">
+            <div data-row-class="contact" style="background-color: #82adbd;">
+              <h2 style="color: white;">Austalia</h2>
+            </div>
+          </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+-->
+
+</body>
+</html>

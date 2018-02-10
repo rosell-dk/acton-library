@@ -1,0 +1,11 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding:0 0 0 30px;
+    margin:0;
+    background: url('http://info.tiatechnology.com/cdnr/49/acton/attachment/7563/f-028a/1/-/-/-/-/orange-arrow-down-small.png') no-repeat 0px 3px transparent;
+}

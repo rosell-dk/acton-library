@@ -1,0 +1,13 @@
+.standard-row.icons .imageField img {
+    width: 100%;
+}
+.standard-row.icons .imageField {
+    max-width: 200px;
+    margin: 0 auto;
+}
+.standard-row.boxed.icons .bb-column-inner {
+    text-align: center;
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="video.js"></script>
+  <link rel="stylesheet" href="video.css" type="text/css" media="all">
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    video({
+      aspectRatio: 640 / 360,
+      selector: '.video-1 iframe'
+    });
+    video({
+      aspectRatio: 1,
+      selector: '.video-2 iframe',
+    });
+    video({
+      aspectRatio: 1,
+      selector: '.video-3 iframe',
+      maxHeight: 250
+    });
+  });
+  </script>
+  <style>
+  .ao-video iframe {
+    /*
+      position: absolute;
+      top: 0;
+      left: 0;*/
+      width: 100%;
+      /*height: 100%; */
+  }
+
+  .video-1 {
+    background-color: pink;
+  }
+  .video-2 {
+    background-color: gold;
+  }
+  </style>
+</head>
+<body>
+
+<h2>First video has aspect ratio set to 640/360</h2>
+<div style="width:50%; height:250px; position:relative" class="video-1">
+  <div class="ao-video">
+    <iframe src="https://www.youtube.com/embed/kiCW3wWS98E?modestbranding=0&showinfo=0&rel=0&autoplay=0" allowfullscreen="" frameborder="0"></iframe>
+  </div>
+</div>
+
+<h2>Next video has aspect ratio set to 1</h2>
+<div style="width:50%; height:250px; position:relative" class="video-2">
+  <div class="ao-video">
+    <iframe src="https://www.youtube.com/embed/kiCW3wWS98E?modestbranding=0&showinfo=0&rel=0&autoplay=0" allowfullscreen="" frameborder="0"></iframe>
+  </div>
+</div>
+
+<h2>Next video has maxHeight set to 250</h2>
+<div style="width:50%; height:250px; position:relative" class="video-3">
+  <div class="ao-video">
+    <iframe src="https://www.youtube.com/embed/kiCW3wWS98E?modestbranding=0&showinfo=0&rel=0&autoplay=0" allowfullscreen="" frameborder="0"></iframe>
+  </div>
+</div>
+
+</body>
+</html>

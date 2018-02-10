@@ -1,0 +1,11 @@
+.dash::after {
+    content: '—';
+    display: block;
+    line-height: 2.0em;
+}
+.dash {
+    margin-bottom:0;
+}
+.dash ~ p {
+    margin-top: 0;
+}

@@ -1,0 +1,36 @@
+Ide:
+
+En funktion:
+
+function findElementParents(elementSelector, parentSelector) {
+  var elements = document.querySelectorAll(elementSelector);
+
+  var result = [];
+  elements.forEach(function(elem) {
+
+    // climb up the tree, until we find an element that matches
+    // parentSelector
+    var foundMatch = false;
+    while (!foundMatch && elem && elem !== document) {
+      foundMatch = elem.matches(parentSelector);
+    }
+
+    if (foundMatch) {
+      result.push(elem);
+    }
+  }
+  return result;
+}
+
+
+Den vil kunne bruges til en funktion, der kan sætte en class på fundne parents.
+
+
+function addClassToElementParents(elementSelector, parentSelector, className) {
+  ...
+}
+
+Og med den vil man f.eks. kunne sætte class på alle kolonner, der indeholder et billede
+på denne måde:
+
+addClassToElementParents('img', '.bb-column', 'has-image');

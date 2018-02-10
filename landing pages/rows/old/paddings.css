@@ -1,0 +1,31 @@
+/* Percentage padding on all text blocks, iframe blocks and form blocks */
+
+/* One-column rows */
+.ao-column-12 .ao-customcontent-block,
+.ao-column-12 .ao-form-block,
+.ao-column-12 .ao-richtext-block {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+}
+/* Two-column rows needs double the padding */
+.ao-column-6 .ao-customcontent-block,
+.ao-column-6 .ao-form-block,
+.ao-column-6 .ao-richtext-block {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+
+/* When act-on transforms to single-column design, paddings must be the same */
+@media (max-width:767px) {
+    .ao-column-12 .ao-customcontent-block,
+    .ao-column-12 .ao-form-block,
+    .ao-column-12 .ao-richtext-block,
+    .ao-column-6 .ao-customcontent-block,
+    .ao-column-6 .ao-form-block,
+    .ao-column-6 .ao-richtext-block{
+      padding-left: 7.5%;
+      padding-right: 7.5%;
+    }
+
+}

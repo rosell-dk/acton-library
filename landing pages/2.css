@@ -1,0 +1,39 @@
+/*Jeg har nu lavet den responsive
+
+Jeg har lavet noget CSS i med fordel kan genbruge.
+Med den CSS bliver der automatisk sat procentvis padding på alle text-blocks.
+Der sættes ikke padding på image-blocks, da disse for det meste ønskes uden padding
+På små skærme gøres padding endnu mindre.
+
+Jeg har sat padding til 0 på alle kolonner i act-on.
+
+Her er CSS'en:
+*/
+
+/* Percentage padding on all text blocks, iframe blocks and form blocks */
+.ao-column-12 .ao-customcontent-block,
+.ao-column-12 .ao-form-block,
+.ao-column-12 .ao-richtext-block{
+    padding: 0 18%; /* = 170 px on desktop */
+}
+
+
+/* On mobile, we want smaller percentage */
+@media (max-width:800px) {
+    .ao-column-12 .ao-customcontent-block,
+    .ao-column-12 .ao-form-block,
+    .ao-column-12 .ao-richtext-block{
+        padding: 0 10%;
+    }
+
+}
+
+/* No padding on specific columns  */
+ #column-c1513082655983 .ao-richtext-block {
+     padding: 0!important;
+ }
+
+ /* Iframe max 100% width */
+ iframe {
+     max-width: 100%;
+ }

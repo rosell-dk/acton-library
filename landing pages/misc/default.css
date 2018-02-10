@@ -1,0 +1,14 @@
+a.button {
+  background-color: rgb(231, 81, 18);
+  color: white;
+  font-weight: normal;
+  padding: 7px 10px;
+  font-size: 10pt;
+}
+a.button:hover {
+  background-color: rgb(223, 119, 76);
+}
+body {
+    max-width: 2200px;
+    margin: 0 auto !important;
+}

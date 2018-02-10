@@ -1,0 +1,21 @@
+/* Make background colors of the rows go to the edge of the screen.
+   We do it by setting max width on .ao-row instead of .ao-row-wrapper. */
+
+.ao-row-wrapper {
+    width: 100% !important;
+
+}
+.ao-row {
+    margin: 0 auto !important;
+    max-width: 1120px;
+}
+
+
+/* Alternating background-colors */
+
+div > div:nth-child(even) > .ao-row-wrapper {
+    background-color: #d6d6d6 !important;
+}
+div > div:nth-child(odd) .ao-row-wrapper {
+    background-color: #b5b8b7 !important;
+}
