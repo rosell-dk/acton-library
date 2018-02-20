@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="../core.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    /*rowClass({
+      keep_ao_row_wrapper_class_and_styles: true
+    });*/
+//console.log('hi');
+    //findElementParents('[data-row-class="contact"]', 'div > .ao-row-wrapper');
+    addClassToElementParents('[data-row-class="contact"]', '.ao-lp > div', 'contact');
+    //addClassToElementParents('[data-column-class="blue"]', '.ao-column', 'blue');
+
+    addClassToElements(
+      findElementParents('[data-column-class="blue"]', '.ao-column'),
+      'blue'
+    );
+
+    cleanUpAoRowClasses(
+      findElementParents('[data-row-class]', '.ao-row-wrapper'),
+      {
+        keep_ao_row_wrapper_class_and_styles: true
+      }
+    )
+
+/*
+    cleanUpAllAoRowClasses(
+      {
+        keep_ao_row_wrapper_class_and_styles: true
+      }
+    );*/
+
+  });
+  </script>
+  <!--<link rel="stylesheet" href="row-class.css" type="text/css" media="all">-->
+
+  <style>
+  .ao-column {
+    background-color: green;
+  }
+
+  .bb-row {
+    border: 1px solid blue;
+    display: flex;
+  }
+  .ao-column {
+    padding: 20px;
+    border: 1px solid blue;
+  }
+  .dark {
+    background-color: brown;
+    color: white;
+  }
+  .contact {
+    font-style: italic;
+  }
+  .blue {
+    background-color: blue;
+  }
+  </style>
+</head>
+<body class="ao-lp">
+  This is a demonstration of the functionality of row-class.js.<br>
+  We do not use the CSS here...
+  <div>
+    <div class="ao-row-wrapper" style="margin:auto">
+      <div class="ao-row" style="border-radius: 0px;">
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span data-row-class="contact" data-column-class="blue">I'm in a 'contact' row, im all italic</span>
+          </div>
+        </div>
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <div style="background-color:#ff0000">I'm also in a contact-row (because my brother is)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="ao-row-wrapper" style="margin:auto">
+      <div class="ao-row" style="border-radius: 0px;">
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span data-row-class="contact">Here we have set data-row-class on both columns</span>
+          </div>
+        </div>
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span data-row-class="contact">... will it get the class applied twice? - no, because duplicates are removed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="ao-row-wrapper" style="margin:auto">
+      <div class="ao-row" style="border-radius: 0px;">
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span>I'm an unprocessed ao row. So I have "ao" classes. Therefore, I'm green</span>
+          </div>
+        </div>
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span>me too</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="ao-row-wrapper" style="margin:auto">
+      <div class="ao-row" style="border-radius: 0px;">
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span data-row-class="contact dark">My row class is "contact dark".</span>
+          </div>
+        </div>
+        <div class="ao-column ao-column-6">
+          <div class="ao-block">
+            <span>mine too...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

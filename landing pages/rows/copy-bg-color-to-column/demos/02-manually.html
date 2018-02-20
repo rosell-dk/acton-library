@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="../../../core/core.js"></script>
+  <script src="../copy-bg-color-to-column.js"></script>
+
+  <script>
+  // This script is for the situation when columns need custom colors
+  // The color is set on an element with style="background-color:xxx"
+  // and this attribute set: data-copy-bg-color-to-column
+
+  document.addEventListener('DOMContentLoaded', function() {
+    copyBgColorToColumn(document.querySelectorAll('[data-row-class="contact"]'));
+  });
+
+  </script>
+  <style>
+  .ao-column {
+    padding: 20px;
+    background-color: green;
+  }
+  </style>
+</head>
+<body>
+  <div class="ao-row-wrapper">
+    <div class="ao-row">
+      <div class="ao-column">
+        <span>Ordinary</span>
+      </div>
+    </div>
+    <div class="ao-row">
+      <div class="ao-column">
+        <span style="background-color: #82adbd;" data-row-class="contact">Changed</span>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+</body>
+</html>
