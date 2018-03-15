@@ -1,6 +1,6 @@
 /*
 Row Cleanup
-Version: 1.0
+Version: 1.0.1
 
 Clean up ao styles and classes of elements in selected rows (row-wrappers are expected)
 Styles and classes inside the ao-blocks will howover never be touched
@@ -49,6 +49,7 @@ function cleanUpAoRowClasses(arr, options) {
     }
   }
 
+  arr = Array.prototype.slice.call(arr);
 
   arr.forEach(function(elem) {
 
@@ -60,6 +61,8 @@ function cleanUpAoRowClasses(arr, options) {
     // 2) Remove class and styles of parents of these blocks (until ao-row-wrapper)
 
     var blocks = elem.querySelectorAll('.ao-block');
+    blocks = Array.prototype.slice.call(blocks);
+
     blocks.forEach(function(el) {
 
       // climb up the tree, untill we find an element with "ao-row-wrapper" class
