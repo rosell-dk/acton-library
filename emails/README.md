@@ -49,8 +49,10 @@ This breaks down all columns:
 }
 ```
 
-If you don't want to break all columns down, it gets a bit hacky.
-Act-on unfortunately does not let you set "class" attributes on rows or columns.
+If you don't want to break all columns down, it gets more than a bit hacky.
+The issue is that Act-on unfortunately does not let you set "class" attributes on rows or columns.
+We have the same issue in landing pages, where I have created some javascript for these situations.
+But this is emails, and we cannot rely on javascript.
 
 The only way I figured out to target particular columns is by setting its *width* to something unique (you can adjust the width of columns in the GUI, with the mouse).
 
@@ -58,17 +60,20 @@ For example, we can set it to 349px, even though we really wanted it to be 350px
 And then we can target like this:
 
 ```css
-td[width="349"],
-td[width="351"] {
-  width: 350px;
-}
-
 @media (max-width: 480px) {
   td[width="349"],
   td[width="351"] {
     display: block;
     width: 100%;
   }
+}
+```
+
+You probably also want to set back the widths to what they really should be:
+```css
+td[width="349"],
+td[width="351"] {
+  width: 350px;
 }
 ```
 
