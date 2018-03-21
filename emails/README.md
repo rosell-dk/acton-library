@@ -72,6 +72,21 @@ td[width="351"] {
 }
 ```
 
+If you want the last column to display above the first, there is this good old hack for two columns:
+
+```css
+td[width="349"] {
+  display: table-header-group;
+}
+td[width="351"] {
+  display: table-footer-group;
+}
+```
+
+For more that two columns, you can use flexbox. The mobile phones manages fine.
+
+
+
 ### Uneven horizontal paddings on columns
 
 Sometimes you need to add uneven horizontal paddings on a column for it to look good as a column.
