@@ -9,8 +9,11 @@ So lets do that:
 
 Set *Message width = 700*. (or something else, but in that case modify the numbers that follows)
 
+
 The following CSS will make content max 100% wide.
-So message width is max 700px, but below 700px, we switch to fluid
+So message width is max 700px, but below 700px, we switch to fluid.
+
+The CSS can be inserted as a *Custom Content* block
 
 ```css
 @media (max-width: 720px) {
