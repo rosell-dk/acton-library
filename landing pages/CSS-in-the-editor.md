@@ -2,6 +2,7 @@
 
 If your CSS only works in the landing page, here are some tricks and info that may help you get it working in the editor as well
 
+We cannot resort to javascript, because javascript is disabled in the editor.
 
 ## The html
 
@@ -9,11 +10,12 @@ HTML in front-end:
 
 ```html
 <div class="ao-column-inner">
-    <div class="ao-text-block">
+  <div class="ao-text-block">
+  </div>
 </div>
 ```
 
-HTML in editor:
+Corresponding HTML in editor:
 
 ```html
 <div class="ao-column-inner">
