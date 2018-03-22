@@ -1,0 +1,32 @@
+/* Center the content of a certain columns vertically.
+   Criteria:
+     - First column in the row
+     - Column has 50% width (.ao-column-6)
+     - Column contains a richtext block (and only one block)
+
+   */
+
+.ao-column-6:first-child > div > div {
+    display: table;
+    height: 100%;
+}
+
+.ao-column-6:first-child .ao-richtext-block {
+    display: table-cell !important;
+    vertical-align: middle;
+}
+@media only screen {
+  #editor-design .ao-column-6:nth-child(2) .editor-block-wrapper,
+  #editor-design .ao-column-6:nth-child(2) .editor-block,
+  #editor-design .ao-column-6:nth-child(2) .editor-block > .ng-scope {
+      height: 100%;
+  }
+  #editor-design .ao-column-6:nth-child(2) .editor-block > .ng-scope > data-ng-include {
+      height: 100%;
+      display: table;
+  }
+  #editor-design .ao-column-6:nth-child(2) .ao-richtext-block {
+    display: table-cell !important;
+    vertical-align: middle;
+  }
+}

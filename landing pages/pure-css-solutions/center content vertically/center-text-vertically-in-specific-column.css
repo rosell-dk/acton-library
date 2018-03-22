@@ -1,0 +1,22 @@
+/* Center the content of a specific column vertically. 
+   Make sure to change id's here, to match your column id
+*/
+
+div#column-c1521719543617 > div > div {
+    display: table;
+    height: 100%;
+}
+div#column-c1521719543617 > div > div div.ao-block {
+    display: table-cell !important;
+    vertical-align: middle;
+}
+
+@media only screen {
+  #column-c1521719543617 .ng-scope {
+      height: 100%;
+  }
+  #column-c1521719543617 data-ng-include {
+      height: 100%;
+      display: table;
+  }
+}

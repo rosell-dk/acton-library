@@ -1,6 +1,7 @@
 # CSS and the act-on editor
 
-If your CSS only works in the landing page, here are some tricks and info that may help you get it working in the editor as well
+If your CSS only works in the landing page, here are some info and tricks that may
+help you get it working in the editor as well.
 
 We cannot resort to javascript, because javascript is disabled in the editor.
 
@@ -12,20 +13,25 @@ HTML in front-end:
 <div class="ao-row">
   <div class="ao-column">
     <div class="ao-column-inner">
-      <div class="ao-text-block">
+      <div>
+        <div class="ao-block">
+          ...
+        </div>
       </div>
     </div>
   </div>
 </div>
 ```
 
-Corresponding HTML in editor:
+Corresponding HTML in editor (simplified):
 
 ```html
 <div class="ao-row editor-row">
   <div>
     <div class="editor-row-hover cf">
-      <div class="rowToolbar ao-nuc">
+        <div class="rowToolbar ao-nuc">
+          ...
+        </div>
         <div class="ao-column editor-column ng-scope">
           <div class="ao-column-inner">
             <div class="columnToolbar ao-nuc">
@@ -35,7 +41,7 @@ Corresponding HTML in editor:
               <div class="editor-block ao-nuc">
                 <div class="ng-scope">
                   <data-ng-include>
-                    <div class="ao-text-block">
+                    <div class="ao-block">
                       ...
                     </div>
                   </data-ng-include>
@@ -54,16 +60,25 @@ Corresponding HTML in editor:
 
 The ao-nuc classes protects the editor from your CSS.
 Act on automatically adds `:not(.ao-nuc)` to all CSS rules you write in the editor.
+Act-on also appends `#editor-design ` to all the rules, again to shield the interface
 
-However, we can out-clever act-on, as it turns out act-on does not add the :not(.ao-nuc) to media queries.
+However, we can out-clever act-on, as it turns out act-on does not protect the interface from
+css inside media queries.
 
-So do your hacks inside a media query:
+So do your hacks inside a media query.
 
 ```css
 @media only screen {
 
 }
 ```
+
+- but be careful not to mess the interface up.
+Make sure to protect it, ie by apppending `#editor-design` to your rules
+
+
+
+
 
 # Inspecting the elements in the editor
 

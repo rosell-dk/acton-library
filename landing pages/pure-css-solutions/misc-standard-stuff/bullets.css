@@ -1,0 +1,18 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0;
+  text-indent: 0px;
+  margin: 0;
+}
+
+li::before {
+  content: "•";
+  color: #e75012;
+  display: inline-block;
+  padding: 0 10px 0 1px;
+}
